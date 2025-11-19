@@ -1,0 +1,147 @@
+/* =======================================================
+   styles.css - GÜNCEL VE HATA GİDERİLMİŞ KOD
+   (Ortalama, Stil, Kaçış ve Kalp Animasyonu)
+   ======================================================= */
+
+   body {
+    font-family: Arial, sans-serif;
+    
+    /* İÇERİĞİ ORTALAMA */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow: hidden; 
+    font-family: Arial, sans-serif;
+    
+    /* İÇERİĞİ ORTALAMA KURALLARI */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    
+    /* Eski arka plan rengi: background-color: #f4f4f4; */
+    color: #333;
+    overflow: hidden; 
+
+    /* =========================================
+       YENİ ARKA PLAN RESMİ KURALLARI
+       ========================================= */
+
+    /* 1. Resmi yükle (arkaplan.jpg adını kendi resminizin adıyla değiştirin!) */
+    background-image: url('123.jpg'); 
+    
+    /* 2. Resmi sayfanın tamamını kaplayacak şekilde boyutlandır */
+    background-size: cover; 
+    
+    /* 3. Sayfa kaydırılsa bile resmin sabit kalmasını sağla */
+    background-attachment: fixed;
+    
+    /* 4. Resim tekrarlanmasın */
+    background-repeat: no-repeat;
+    
+    /* 5. Resmi ortala */
+    background-position: center center;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    
+    /* ÖNEMLİ: Fixed butonu yönetmek ve önde kalmak için */
+    position: relative; 
+    z-index: 100; 
+}
+
+h1 {
+    color: #ff69b4;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.dugmeler {
+    margin-top: 20px;
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    position: relative; 
+    min-height: 50px; 
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease; 
+    outline: none;
+    font-weight: bold;
+}
+
+/* EVET Düğmesi Stilleri */
+#evetDugmesi {
+    background-color: #28a745;
+    color: white;
+}
+
+#evetDugmesi:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* HAYIR Düğmesi Stilleri (Kaçış) */
+#hayirDugmesi {
+    background-color: #dc3545;
+    color: white;
+    
+    /* TAM EKRAN KAÇIŞ */
+    position: fixed; 
+    transition: left 0.2s ease-out, top 0.2s ease-out; 
+    
+    /* BAŞLANGIÇ KONUMU: Çakışmayı ve ekran dışı kalmayı engeller */
+    top: 50%; 
+    left: 50%; 
+    z-index: 10; 
+}
+
+#hayirDugmesi:hover {
+    cursor: default; 
+}
+
+/* =======================================================
+   ASCII Kalp Stilleri
+   ======================================================= */
+
+#asciiHeart {
+    /* POZİSYON VE ANİMASYON */
+    position: fixed; 
+    left: 50%;       
+    top: -500px;     /* Başlangıçta yukarıda gizli */
+    transform: translateX(-50%); /* Yatayda ortalama */
+    z-index: 1; 
+    transition: top 8s ease-out; /* Yavaş kayma animasyonu */
+    
+    /* GÖRÜNTÜ VE ŞEKİL DÜZELTMELERİ */
+    font-family: 'Courier New', Courier, monospace; /* ASCII için kritik font */
+    font-size: 2em;
+    line-height: 0.8em; /* Dikeyde sıkıştırma */
+    color: #ff69b4; 
+    user-select: none; 
+    white-space: pre; 
+}
+
+/* JavaScript ile eklenen sınıf (Animasyonu tetikler) */
+#asciiHeart.kalp-goster {
+    top: 5%; /* İneceği nihai nokta */
+}
