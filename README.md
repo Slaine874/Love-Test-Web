@@ -1,0 +1,1 @@
+Tamamen AI Tarafından Oluşturulmuştur
